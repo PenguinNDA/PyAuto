@@ -1,16 +1,22 @@
+import math
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import time
 
 # Create our variable
-link = "http://suninjuly.github.io/simple_form_find_task.html"
+link = "http://suninjuly.github.io/find_link_text"
+number = str(math.ceil(math.pow(math.pi, math.e)*10000))
 browser = webdriver.Chrome(ChromeDriverManager().install())
 
 try:
 
     # Open browser
     browser.get(link)
+
+    # Find our number and click it
+    link = browser.find_element(By.PARTIAL_LINK_TEXT, number)
+    link.click()
 
     # Input our data to text fields
     input1 = browser.find_element(By.TAG_NAME, 'input')
@@ -21,14 +27,15 @@ try:
     input3.send_keys("Smolensk")
     input4 = browser.find_element(By.ID, "country")
     input4.send_keys("Russia")
-    button = browser.find_element(By.CSS_SELECTOR, "button.btn")
+
 
     # Click to button
+    button = browser.find_element(By.CSS_SELECTOR, "button.btn")
     button.click()
 
 finally:
 
-    # Waiting 30 sec for copy code
+    # waiting 30 sec for copy code
     time.sleep(5)
 
     # close browser
