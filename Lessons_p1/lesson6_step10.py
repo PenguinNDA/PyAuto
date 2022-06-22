@@ -22,7 +22,6 @@ try:
     input3 = browser.find_element(By.CLASS_NAME, 'third')
     input3.send_keys("send@text.qa")
 
-
     # press button "Submit"
     button = browser.find_element(By.CSS_SELECTOR, "button.btn")
     button.click()
