@@ -17,11 +17,11 @@ try:
     # Find sum
     first_number = int(browser.find_element(By.ID, 'num1').text)
     second_number = int(browser.find_element(By.ID, 'num2').text)
-    sum = first_number + second_number
+    sum_of_number = first_number + second_number
 
     # Select 'sum' from list
     list_of_values = Select(browser.find_element(By.TAG_NAME, "select"))
-    list_of_values.select_by_visible_text(str(sum))
+    list_of_values.select_by_visible_text(str(sum_of_number))
 
     # press button "Submit"
     submit_button = browser.find_element(By.TAG_NAME, "button")
