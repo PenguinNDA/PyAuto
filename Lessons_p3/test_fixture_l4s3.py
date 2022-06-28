@@ -13,7 +13,7 @@ def browser():
     return browser
 
 
-class TestMainPage1():
+class TestMainPage1:
 
     # Use fixture as parameter
     def test_guest_should_see_login_link(self, browser):
